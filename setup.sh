@@ -42,9 +42,9 @@ if [ -d "/usr/local/bin" ]; then
     echo "Would you like to create a symlink in /usr/local/bin? (y/n)"
     read -r response
     if [[ "$response" =~ ^[Yy]$ ]]; then
-        sudo ln -sf "$SCRIPT_DIR/hash_identifier.py" /usr/local/bin/hash-identifier
-        echo "✓ Created symlink: /usr/local/bin/hash-identifier"
-        echo "  You can now run: hash-identifier <hash>"
+        sudo ln -sf "$SCRIPT_DIR/hxmod" /usr/local/bin/hxmod
+        echo "✓ Created symlink: /usr/local/bin/hxmod"
+        echo "  You can now run: hxmod <hash>"
     fi
 fi
 
@@ -75,7 +75,10 @@ echo "Installation Complete!"
 echo "=========================================="
 echo ""
 echo "Usage:"
-echo "  # Identify a single hash"
+echo "  # Quick command (if symlink installed)"
+echo "  hxmod \"8846f7eaee8fb117ad06bdd810b7e332\""
+echo ""
+echo "  # Direct Python execution"
 echo "  python3 hash_identifier.py \"8846f7eaee8fb117ad06bdd810b7e332\""
 echo ""
 echo "  # Identify from file"
