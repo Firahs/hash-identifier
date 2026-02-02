@@ -1,0 +1,29 @@
+# Sample hashes for testing the hash identifier tool
+# One hash per line
+
+# Raw hashes
+8846f7eaee8fb117ad06bdd810b7e332
+356a192b7913b04c54574d18c28d46e6395428ab
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+
+# Unix hashes
+$1$salt$hashed.hashes.here.very.long
+$5$salt$hashed.hashes.here.very.long.string.long
+$6$salt$hashed.hashes.here.very.long.string.long.hashes
+$2a$12$R9h/cIPz0gi.URNNGHQ1be3DlH.PKZbv5H8KnzzVgXXbVxzy2K7E.
+
+# Argon2
+$argon2id$v=19$m=65536,t=3,p=1$salt$hash
+
+# Django PBKDF2
+pbkdf2_sha256$260000$salt$hash
+
+# JWT
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.dozjgNryP4J3jVmNHl0w5N_XgL0n3I9PlFUP0THsR8U
+
+# Windows NTLM (same as MD5 format, context dependent)
+8846f7eaee8fb117ad06bdd810b7e332
+
+# MySQL
+*81F5E21E35407D884A6CD4A731AEBFB6AF209E1B
