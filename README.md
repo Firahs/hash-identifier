@@ -207,99 +207,6 @@ $ python3 hash_identifier.py -f hashes.txt --output json
 ]
 ```
 
-## 📁 Project Structure
-
-```
-hash-identifier/
-├── hash_identifier.py          # Main CLI entry point
-├── database/
-│   └── hashcat_modes.json      # Complete hashcat modes database
-├── lib/
-│   ├── hash_patterns.py        # Regex patterns for hash detection
-│   ├── hash_analyzer.py        # Core hash analysis logic
-│   └── formatter.py            # Output formatting module
-├── examples/
-│   ├── sample_hashes.txt       # Example hashes to test with
-│   └── sample_output.json      # Example output file
-├── setup.sh                    # Linux installation script
-├── requirements.txt            # Python dependencies (optional)
-├── README.md                   # This file
-└── .gitignore                  # Git ignore file
-```
-
-## 🔧 Architecture
-
-### Core Components
-
-1. **hash_patterns.py**: Regex pattern collection for hash type detection
-   - Organized by hash category
-   - Confidence scoring based on pattern specificity
-   - Fast pattern matching
-
-2. **hash_analyzer.py**: Main analysis engine
-   - Pattern matching integration
-   - Hashcat modes database management
-   - Feature analysis
-   - Database search functionality
-
-3. **formatter.py**: Multi-format output system
-   - Standard, table, detailed, JSON, CSV formats
-   - Batch result formatting
-   - Hashcat command suggestions
-
-4. **hash_identifier.py**: Command-line interface
-   - Argument parsing
-   - Input handling (single hash, file, stdin)
-   - Output management
-   - Database querying
-
-### Data Flow
-
-```
-User Input (CLI)
-    ↓
-Argument Parser
-    ↓
-Hash Input (single/batch)
-    ↓
-Hash Analyzer
-    ├─ Pattern Matching (hash_patterns.py)
-    ├─ Database Lookup (hashcat_modes.json)
-    └─ Feature Analysis
-    ↓
-Format Results (formatter.py)
-    ↓
-Output (stdout/file)
-```
-
-## 🗄️ Database Format
-
-The `hashcat_modes.json` database contains:
-
-```json
-{
-  "metadata": {
-    "version": "7.0.0",
-    "source": "https://hashcat.net/wiki/",
-    "last_updated": "2026-02-02",
-    "total_modes": 450
-  },
-  "hash_modes": [
-    {
-      "mode": 0,
-      "name": "MD5",
-      "category": "Raw Hash",
-      "description": "MD5 hash",
-      "example": "8846f7eaee8fb117ad06bdd810b7e332",
-      "regex_pattern": "^[a-f0-9]{32}$",
-      "length": 32,
-      "salt_type": "none",
-      "iterations": 1,
-      "variants": []
-    }
-  ]
-}
-```
 
 ## 🎓 How It Works
 
@@ -446,22 +353,7 @@ Contributions are welcome! Areas for improvement:
 - [Hash Format Examples](https://hashcat.net/wiki/#example_hashes)
 - [Hashcat Modes Documentation](https://hashcat.net/wiki/#hashcat)
 
-## ❓ FAQ
 
-**Q: Is my hash data safe?**
-A: Yes, all processing is offline. Your hash data never leaves your computer.
-
-**Q: How many hashes can I process at once?**
-A: Theoretically unlimited, but practical limits depend on your system resources.
-
-**Q: Can I modify the database?**
-A: Yes, the database is a standard JSON file that can be edited or updated.
-
-**Q: Does this work on macOS/Windows?**
-A: Yes, it works on any system with Python 3.6+.
-
-**Q: How accurate is the identification?**
-A: Accuracy depends on hash format and distinctive characteristics. Confidence scores are provided for each match.
 
 ## 📞 Support
 
