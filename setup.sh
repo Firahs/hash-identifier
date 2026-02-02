@@ -34,7 +34,9 @@ fi
 
 # Make the main script executable
 chmod +x "$SCRIPT_DIR/hash_identifier.py"
+chmod +x "$SCRIPT_DIR/hxmod"
 echo "✓ Made hash_identifier.py executable"
+echo "✓ Made hxmod executable"
 
 # Create symlink in common location (optional)
 if [ -d "/usr/local/bin" ]; then
