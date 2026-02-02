@@ -36,6 +36,7 @@ A fast, offline CLI tool for identifying hash types and finding corresponding Ha
 
 ```bash
 # Clone or download the repository
+git clone https://github.com/Firahs/hash-identifier
 cd hash-identifier
 
 # Run the installation script
